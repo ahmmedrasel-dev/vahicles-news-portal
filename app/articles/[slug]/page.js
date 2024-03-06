@@ -37,7 +37,7 @@ const News = async ({params}) => {
  
   return (
     <main className='xl:container mx-auto'>
-      <div className='w-full h-[500px] overflow-hidden'>
+      <div className='w-full md:h-[500px] h-[175px] overflow-hidden'>
         <Image src={article.thumbnail} height={1500} width={1000} className='w-full object-cover' alt='Slider 1' />
       </div>
 
