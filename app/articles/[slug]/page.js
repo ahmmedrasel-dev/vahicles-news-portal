@@ -8,6 +8,7 @@ import { readingTime } from '@/app/utils/CalculateReadingTime'
 import Link from 'next/link'
 import SocialShare from '@/app/utils/SocialShare'
 import { ImageResponse } from 'next/og'
+import { getAllArticles } from '@/app/utils/getAllArticles';
 
 export function generateImageMetadata() {
   return [
@@ -72,6 +73,13 @@ const News = async ({params}) => {
       </div>
     </main>
   )
+}
+
+export async function generateStaticParams(){
+  const {data: articles} = await getAllArticles();
+  return articles.map(item => ({
+    slug: item.slug
+  }))
 }
 
 export default News
