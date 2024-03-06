@@ -13,5 +13,8 @@ export const getPrimaryArticles = async () => {
       },
      }
    );
+   if(!res.ok){
+    throw new Error('Something went wrong, Fatch Data.!')
+ }
    return res.json();
  };

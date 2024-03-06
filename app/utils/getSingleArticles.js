@@ -11,5 +11,9 @@ export const getSingleArticles = async (slug) => {
        cache: "no-store",
      }
    );
+
+   if(!res.ok){
+    throw new Error('Something went wrong, Fatch Data.!')
+ }
    return res.json();
  };

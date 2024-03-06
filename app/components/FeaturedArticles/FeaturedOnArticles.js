@@ -11,8 +11,10 @@ import { getPrimaryArticles } from '@/app/utils/getPrimaryFeatureArticles'
 import { getSecondaryArticles } from '@/app/utils/getSecondaryArticles'
 
 export const FeaturedOnArticles = async () => {
-  const {data: featurePrimary} = await getPrimaryArticles();
-  const {data: featureSecondary} = await getSecondaryArticles();
+  const featurePrimaryPromise = getPrimaryArticles();
+  const featureSecondaryPromise  = await getSecondaryArticles([featurePrimaryPromise, featureSecondaryPromise]);
+
+  const [featurePrimary, featureSecondary] = await Promise.all()
  
   return (
     <div className='py-6 px-4'>
