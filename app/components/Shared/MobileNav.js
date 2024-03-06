@@ -1,7 +1,7 @@
 import Link from 'next/link'
 import React from 'react'
 import { roboto,abril } from "@/app/fonts";
-import { mainMenu } from "./Menu";
+import Menu, { mainMenu } from "./Menu";
 import { FaTimes } from "react-icons/fa";
 
 
@@ -27,16 +27,7 @@ const MobileNav = ({ isOpen, toggleMenu }) => {
     <ul
       className="lg:hidden mt-10"
     >
-      {mainMenu.map((item, index) => (
-        <li key={index} className='border-b p-2'>
-          <Link
-            href={item.link}
-            className={`hover:text-heading_color text-xl text-menu_item_color ${roboto.className}`}
-          >
-            {item.name}
-          </Link>
-        </li>
-      ))}
+      <Menu />
     </ul>
    </nav>
   );
