@@ -1,6 +1,6 @@
 'use client'
 import { usePathname } from 'next/navigation';
-import React from 'react';
+import React, { useEffect, useState } from 'react';
 import { FaFacebook } from "react-icons/fa";
 import { FaSquareXTwitter } from "react-icons/fa6";
 import { FaLinkedin } from "react-icons/fa";
@@ -8,15 +8,18 @@ import { FaLinkedin } from "react-icons/fa";
 
 const SocialShare = ({title}) => {
    const pathname = usePathname()
-   let url = `${window.location.origin}${pathname}`
-
+   const [url, setUrl] = useState('')
+   useEffect(()=>{
+    setUrl(`${window.location.origin}${pathname}`)
+   }, [pathname])
+   
   const encodedUrl = encodeURIComponent(url);
   const encodedTitle = encodeURIComponent(title);
   return (
     <div className='flex gap-4 flex-wrap'>
       <a
          className='flex gap-2 bg-gray-200 hover:bg-gray-300 text-gray-800 items-center px-5 py-5 rounded-md'
-        href={`https://www.facebook.com/sharer.php?u=${encodedUrl}`}
+        href={`https://www.facebook.com/sharer.php?u=${encodedUrl}&text=${encodedTitle}`}
         target="_blank"
         rel="noopener noreferrer"
       >
