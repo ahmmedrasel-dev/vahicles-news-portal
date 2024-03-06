@@ -73,11 +73,11 @@ const News = async ({params}) => {
   )
 }
 
-// export async function generateStaticParams(){
-//   const {data: articles} = await getAllArticles();
-//   return articles.map(item => ({
-//     slug: item.slug
-//   }))
-// }
+export async function generateStaticParams(){
+  const {data: articles} = await getAllArticles();
+  return articles.map(item => ({
+    slug: item.slug
+  }))
+}
 
 export default News
