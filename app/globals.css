@@ -1,0 +1,24 @@
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+
+@layer utilities {
+  .text-balance {
+    text-wrap: balance;
+  }
+}
+
+
+.header-sticky {
+  position: fixed!important;
+  left: 0;
+  margin: auto;
+  top: 0;
+  width: 100%;
+  box-shadow: 0 0 60px 0 rgba(0,0,0,.07);
+  z-index: 99;
+  animation: fadeInDown .5s ease-in-out 0s 1 normal none running;
+  box-shadow: 0 4px 10px rgba(3,4,28,.1);
+}
