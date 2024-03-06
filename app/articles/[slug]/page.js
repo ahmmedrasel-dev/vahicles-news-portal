@@ -7,15 +7,14 @@ import dateFormat from "dateformat";
 import { readingTime } from '@/app/utils/CalculateReadingTime'
 import Link from 'next/link'
 import SocialShare from '@/app/utils/SocialShare'
-import { ImageResponse } from 'next/og'
 import { getAllArticles } from '@/app/utils/getAllArticles';
 
-export function generateImageMetadata() {
+export function generateImageMetadata({params}) {
   return [
     {
       contentType: 'image/png',
       size: { width: 48, height: 48 },
-      id: 'small',
+      id: params.slug,
     }
   ]
 }
@@ -42,7 +41,7 @@ const News = async ({params}) => {
         <Image src={article.thumbnail} height={1500} width={1000} className='w-full object-cover' alt='Slider 1' />
       </div>
 
-      <div className='grid md:grid-cols-3 grid-cols-1 gap-4 my-8'>
+      <div className='grid md:grid-cols-3 grid-cols-1 gap-4 my-8 md:p-0 p-4'>
         <div className='col-span-2'>
           <div>
             <h1 className='text-3xl'>{article.title}</h1>
@@ -54,7 +53,7 @@ const News = async ({params}) => {
             </div>
           </div>
           <div dangerouslySetInnerHTML={{ __html: article.content}}></div>
-          <div className='flex gap-4 my-8'>
+          <div className='flex gap-4 my-8 flex-wrap'>
             {
               article?.tags.map(item => (
                 <Link href={'/'} key={item.id}><button className='px-6 py-2 font-bold bg-gray-100 text-gray-800 rounded-sm hover:bg-gray-200'>{item.tags}</button></Link>
