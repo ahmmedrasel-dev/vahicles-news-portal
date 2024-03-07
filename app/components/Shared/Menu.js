@@ -1,10 +1,9 @@
-import { getCategories } from '@/app/utils/getCategories'
+
 import Link from 'next/link';
 import React from 'react'
 import { roboto } from "@/app/fonts";
 
 const Menu = async () => {
-  const {data: categories} = await getCategories();
   
   return (
       <>
