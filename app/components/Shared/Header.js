@@ -19,9 +19,9 @@ export default function Header() {
       <div className="xl:container mx-auto p-4 bg-white">
         <nav className={`flex items-center justify-between`}>
             <Link href={'/'}>
-            <div className={`text-4xl text-heading_color ${abril.className}`}>
-              VH News.
-            </div>
+              <div className={`text-4xl text-heading_color ${abril.className}`}>
+                VH News.
+              </div>
             </Link>
             <div className="lg:hidden">
             <button

@@ -7,7 +7,6 @@ import dateFormat from "dateformat";
 import { readingTime } from '@/app/utils/CalculateReadingTime'
 import Link from 'next/link'
 import SocialShare from '@/app/utils/SocialShare'
-import { getAllArticles } from '@/app/utils/getAllArticles';
 
 export function generateImageMetadata({params}) {
   return [
@@ -34,11 +33,10 @@ export async function generateMetadata({params}){
 
 const News = async ({params}) => {
   const {data: article} = await getSingleArticles(params.slug)
- 
   return (
     <main className='xl:container mx-auto'>
       <div className='w-full md:h-[500px] h-[175px] overflow-hidden'>
-        <Image src={article.thumbnail} height={1500} width={1000} className='w-full object-cover' alt='Slider 1' />
+        <Image src={article.thumbnail} height={1500} width={1000} className='w-full object-cover' alt={article.title} />
       </div>
 
       <div className='grid md:grid-cols-3 grid-cols-1 gap-4 my-8 md:p-0 p-4'>
@@ -56,7 +54,7 @@ const News = async ({params}) => {
           <div className='flex gap-4 my-8 flex-wrap'>
             {
               article?.tags.map(item => (
-                <Link href={'/'} key={item.id}><button className='px-6 py-2 font-bold bg-gray-100 text-gray-800 rounded-sm hover:bg-gray-200'>{item.tags}</button></Link>
+                <Link href={'/'} key={item.tags}><button className='px-6 py-2 font-bold bg-gray-100 text-gray-800 rounded-sm hover:bg-gray-200'>{item.tags}</button></Link>
               ))
             }
           </div>
@@ -74,11 +72,11 @@ const News = async ({params}) => {
   )
 }
 
-export async function generateStaticParams(){
-  const {data: articles} = await getAllArticles();
-  return articles.map(item => ({
-    slug: item.slug
-  }))
-}
+// export async function generateStaticParams(){
+//   const {data: articles} = await getAllArticles();
+//   return articles.map(item => ({
+//     slug: item.slug
+//   }))
+// }
 
 export default News

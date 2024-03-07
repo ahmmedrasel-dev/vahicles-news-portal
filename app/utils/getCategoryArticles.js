@@ -1,8 +1,8 @@
-export const getSingleArticles = async (slug) => {
+export const getCateogoryArticles = async (category) => {
    const bearerToken = process.env.API_KEY;
    const baseUrl = process.env.BASE_URL;
    const res = await fetch(
-     `${baseUrl}/news/${slug}`,
+     `${baseUrl}/category-news/${category}`,
      {
        headers: {
          'Authorization': `Bearer ${bearerToken}`,
@@ -11,9 +11,8 @@ export const getSingleArticles = async (slug) => {
        cache: "no-store",
      }
    );
-
    if(!res.ok){
     throw new Error('Something went wrong, Fatch Data.!')
-    }
+  }
    return res.json();
  };

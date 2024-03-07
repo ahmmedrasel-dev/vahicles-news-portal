@@ -8,8 +8,8 @@ import { readingTime } from '@/app/utils/CalculateReadingTime';
 const Articles = ({article}) => {
   return (
     <div>
-        <Link href={`articles/${article.slug}`}><Image src={article.thumbnail} alt={article.title} width={1000} height={1000} className='w-full' /></Link>
-        <Link href={`articles/${article.slug}`}><h3 className={`${roboto.className} text-xl text-heading_color py-4`}>{article.title}</h3></Link>
+        <Link href={`/articles/${article.slug}`}><Image src={article.thumbnail} alt={article.title} width={1000} height={1000} className='w-full' /></Link>
+        <Link href={`/articles/${article.slug}`}><h3 className={`${roboto.className} text-xl text-heading_color py-4`}>{article.title}</h3></Link>
         <div className={'text-text_color text-base'}>
           {article?.content.split(' ').slice(0, 20).join(' ')}
           {article?.content.split(' ').length > 20 && ' ...'}

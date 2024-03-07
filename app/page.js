@@ -16,16 +16,3 @@ export default async function Home() {
 }
 
 
-export const metadata = {
-  alternates: {
-    canonical: '/',
-    languages: {
-      'en-US': '/en-US',
-      'de-DE': '/de-DE',
-    },
-  },
-  openGraph: {
-    images: '/og-image.png',
-  },
-}
-
