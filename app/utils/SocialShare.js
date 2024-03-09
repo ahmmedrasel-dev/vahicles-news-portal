@@ -18,7 +18,7 @@ const SocialShare = ({title}) => {
   return (
     <div className='flex gap-4 flex-wrap'>
       <a
-         className='flex gap-2 bg-gray-200 hover:bg-gray-300 text-gray-800 items-center px-5 py-5 rounded-md'
+         className='flex gap-2 bg-gray-200 hover:bg-gray-300 text-gray-800 items-center md:p-5 p-3 rounded-md'
         href={`https://www.facebook.com/sharer.php?u=${encodedUrl}&text=${encodedTitle}`}
         target="_blank"
         rel="noopener noreferrer"
@@ -27,7 +27,7 @@ const SocialShare = ({title}) => {
         Share on Facebook
       </a>
       <a
-         className='flex gap-2 bg-gray-200 hover:bg-gray-300 text-gray-800 items-center px-5 py-5 rounded-md'
+         className='flex gap-2 bg-gray-200 hover:bg-gray-300 text-gray-800 items-center md:p-5 p-3 rounded-md'
         href={`https://twitter.com/intent/tweet?url=${encodedUrl}&text=${encodedTitle}`}
         target="_blank"
         rel="noopener noreferrer"
@@ -36,7 +36,7 @@ const SocialShare = ({title}) => {
         Share on Twitter
       </a>
       <a
-         className='flex gap-2 bg-gray-200 hover:bg-gray-300 text-gray-800 items-center px-4 py-5 rounded-md'
+         className='flex gap-2 bg-gray-200 hover:bg-gray-300 text-gray-800 items-center md:p-5 p-3 rounded-md'
         href={`https://www.linkedin.com/sharing/share-offsite/?url=${encodedUrl}&title=${encodedTitle}`}
         target="_blank"
         rel="noopener noreferrer"

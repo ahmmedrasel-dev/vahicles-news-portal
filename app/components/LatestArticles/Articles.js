@@ -4,6 +4,32 @@ import Link from 'next/link'
 import React from 'react'
 import dateFormat from "dateformat";
 import { readingTime } from '@/app/utils/CalculateReadingTime';
+import { getSingleArticles } from '@/app/utils/getSingleArticles';
+
+
+export function generateImageMetadata({params}) {
+  return [
+    {
+      metadataBase: new URL(`${window.location.origin}`),
+      contentType: 'image/png',
+      size: { width: 48, height: 48 },
+      id: params.slug,
+    }
+  ]
+}
+
+export async function generateMetadata({params}){
+  const {data: article} = await getSingleArticles(params.slug)
+  return {
+    metadataBase: new URL(`${window.location.origin}`),
+    title: article.title,
+    description: article.content,
+    openGraph:{
+      images: article.thumbnail
+    }
+  }
+}
+
 
 const Articles = ({article}) => {
   return (

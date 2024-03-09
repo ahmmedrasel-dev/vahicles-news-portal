@@ -10,7 +10,7 @@ const Menu = async () => {
         {
           categories.map(item => <li key={item.id} className='ml-3'>
           <Link
-            href={`/categories/article?category=${item.name.toLowerCase()}`}
+            href={`/categories/${item.name.toLowerCase()}`}
             className={`hover:text-heading_color text-xl text-menu_item_color ${roboto.className}`}
           >
               {item.name}
