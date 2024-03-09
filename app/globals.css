@@ -34,6 +34,18 @@
   transform: translateY(0%);
 }
 
+.search-results-container {
+  position: absolute;
+  height: 600px;
+  overflow-y: scroll;
+  top: 140px;
+  background: #ffffff;
+  width: 100%;
+  left: 0;
+  box-shadow: 0px 2px 10px -2px rgb(120 120 120 / 74%);
+  border-bottom: 2px solid #b8b0b0;
+}
+
 @media (max-width: 425px) {
   .swiper-pagination-bullet {
     width: 14px !important;
