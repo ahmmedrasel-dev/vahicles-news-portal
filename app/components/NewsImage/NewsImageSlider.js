@@ -15,24 +15,23 @@ const NewsImageSlider = ({newsimages}) => {
           clickable: true,
         }}
         loop={true}
-        autoplay={{
-          delay: 3000,
-          disableOnInteraction: false,
-        }}
+        // autoplay={{
+        //   delay: 3000,
+        //   disableOnInteraction: false,
+        // }}
         modules={[Autoplay, Pagination, EffectFade]}
         className="mySwiper w-full md:h-[450px]"
       >
       {
         newsimages.map(item => <SwiperSlide key={item.id} className='relative w-full flex justify-center items-center'>
-        <div>
-            <Image src={item.image_path} width={1000} height={400} placeholder='blur' quality={80} className='w-full object-cover' alt={item.caption} />
-            <div className='absolute md:bottom-12 bottom-12 left-10 bg-black opacity-60 p-4 z-10'>
-              <p className='md:text-4xl text-md md:font-black font-bold md:w-[1000px] text-white leading-[1.5rem] md:leading-[4rem] z-20 mb-3'>{item.caption}</p>
-            </div>
+        <div className='relative'>
+          <Image src={item.image_path} width={1000} height={400} placeholder='blur' quality={80} className='w-full object-cover' alt={item.caption} />
+          <div className='absolute max-w-7xl md:top-[30%] top-[40%] left-1/2 transform -translate-x-1/2 -translate-y-1/2 z-20 bg-black opacity-60 md:p-4 p-2'>
+            <p className='md:text-4xl text-md md:font-black font-bold text-white leading-[1.5rem] md:leading-[4rem]'>{item.caption}</p>
+          </div>
         </div>
-
-        
-      </SwiperSlide>)
+      </SwiperSlide>
+      )
       }
       
       </Swiper>

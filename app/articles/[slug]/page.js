@@ -1,5 +1,4 @@
 
-import Image from 'next/image'
 import RelatedArticles from '@/app/components/RelatedArticles/RelatedArticles'
 import ArticlesHeading from '@/app/components/Shared/ArticlesHeading'
 import { getSingleArticles } from '@/app/utils/getSingleArticles'
@@ -35,7 +34,6 @@ export async function generateMetadata({params}){
 
 const News = async ({params}) => {
   const {data: article} = await getSingleArticles(params.slug)
-  console.log(article);
   return (
     <main className='xl:container mx-auto'>
       <div className='w-full md:h-[500px] h-[175px] overflow-hidden'>
