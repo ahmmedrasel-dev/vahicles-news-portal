@@ -6,12 +6,11 @@ import 'swiper/css';
 import "swiper/css/pagination";
 import "swiper/css/navigation";
 import { EffectFade, Pagination,Autoplay } from 'swiper/modules';
-import Link from 'next/link';
 
-const Slider = ({leadNews}) => {
+const NewsImageSlider = ({newsimages}) => {
   return (
     <>
-      <Swiper
+          <Swiper
         pagination={{
           clickable: true,
         }}
@@ -24,13 +23,11 @@ const Slider = ({leadNews}) => {
         className="mySwiper w-full md:h-[450px]"
       >
       {
-        leadNews.map(item => <SwiperSlide key={item.id} className='relative w-full flex justify-center items-center'>
-        <div className="">
-            <Image src={item.thumbnail} width={1200} height={400} className='w-full object-cover' alt='Slider 1' />
-            <div className='absolute inset-0 bg-black opacity-50'></div>
-            <div className='absolute md:top-24 top-10 left-10'>
-              <p className='md:text-5xl text-md md:font-black font-bold md:w-[1000px] text-white leading-[1.5rem] md:leading-[4rem] z-10 mb-3'>{item.title}</p>
-              <Link href={`articles/${item.slug}`}><button className="bg-white text-black md:py-2 py-1 md:px-4 px-2 rounded-lg shadow-lg">Read More</button></Link>
+        newsimages.map(item => <SwiperSlide key={item.id} className='relative w-full flex justify-center items-center'>
+        <div>
+            <Image src={item.image_path} width={1000} height={400} placeholder='blur' quality={80} className='w-full object-cover' alt={item.caption} />
+            <div className='absolute md:bottom-12 bottom-12 left-10 bg-black opacity-60 p-4 z-10'>
+              <p className='md:text-4xl text-md md:font-black font-bold md:w-[1000px] text-white leading-[1.5rem] md:leading-[4rem] z-20 mb-3'>{item.caption}</p>
             </div>
         </div>
 
@@ -63,4 +60,4 @@ const Slider = ({leadNews}) => {
   )
 }
 
-export default Slider
+export default NewsImageSlider

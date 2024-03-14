@@ -36,7 +36,7 @@ const SocialShare = ({title}) => {
         Share on Twitter
       </a>
       <a
-         className='flex gap-2 bg-gray-200 hover:bg-gray-300 text-gray-800 items-center md:p-5 p-3 rounded-md'
+        className='flex gap-2 bg-gray-200 hover:bg-gray-300 text-gray-800 items-center md:p-5 p-3 rounded-md'
         href={`https://www.linkedin.com/sharing/share-offsite/?url=${encodedUrl}&title=${encodedTitle}`}
         target="_blank"
         rel="noopener noreferrer"

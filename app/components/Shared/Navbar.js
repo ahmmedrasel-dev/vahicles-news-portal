@@ -88,10 +88,10 @@ export default function Navbar({categories, articles}) {
 
           {isSearchOpen &&  (
             <div className="search-results-container p-4 rounded-md">
-              {keyword.length > 0 && <h2 className="text-2xl py-3">Showing {searchResult.length} results for "{keyword}"</h2>}
+              {keyword.length > 0 && <h2 className="text-2xl py-3">Showing {searchResult.length} results for {keyword}</h2>}
               <div className="grid grid-cols-4 gap-4">
               {
-                searchResult.map( article => <Articles article={article} />)
+                searchResult.map( article => <Articles key={article.id} article={article} />)
               }
               </div>
             </div>

@@ -8,6 +8,7 @@ import { readingTime } from '@/app/utils/CalculateReadingTime'
 import Link from 'next/link'
 import SocialShare from '@/app/utils/SocialShare'
 import { getAllArticles } from '@/app/utils/getAllArticles';
+import NewsImageSlider from '@/app/components/NewsImage/NewsImageSlider';
 
 export function generateImageMetadata({params}) {
   return [
@@ -34,10 +35,11 @@ export async function generateMetadata({params}){
 
 const News = async ({params}) => {
   const {data: article} = await getSingleArticles(params.slug)
+  console.log(article);
   return (
     <main className='xl:container mx-auto'>
       <div className='w-full md:h-[500px] h-[175px] overflow-hidden'>
-        <Image src={article.thumbnail} height={1500} width={1000} className='w-full object-cover' alt={article.title} />
+        <NewsImageSlider newsimages={article.newsimages} />
       </div>
 
       <div className='grid md:grid-cols-3 grid-cols-1 gap-4 my-8 md:p-0 p-4'>

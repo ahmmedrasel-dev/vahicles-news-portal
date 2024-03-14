@@ -11,6 +11,7 @@ export const FeaturedOnArticles = async () => {
   const featureSecondaryPromise  = getSecondaryArticles();
 
   const [featurePrimary, featureSecondary] = await Promise.all([featurePrimaryPromise, featureSecondaryPromise])
+
   return (
     <div className='py-6 px-4'>
       <ArticlesHeading title="Featured on  Articles" />
