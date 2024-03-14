@@ -26,7 +26,7 @@ const Slider = ({leadNews}) => {
       {
         leadNews.map(item => <SwiperSlide key={item.id} className='relative w-full flex justify-center items-center'>
         <div className="">
-            <Image src={item.thumbnail} width={1200} height={400} className='w-full object-cover' alt='Slider 1' />
+            <Image src={item.thumbnail} width={1000} height={400} className='w-full object-cover' placeholder='blur' quality={80} alt='Slider 1' />
             <div className='absolute inset-0 bg-black opacity-50'></div>
             <div className='absolute md:top-24 top-10 left-10'>
               <p className='md:text-5xl text-md md:font-black font-bold md:w-[1000px] text-white leading-[1.5rem] md:leading-[4rem] z-10 mb-3'>{item.title}</p>

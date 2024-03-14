@@ -10,7 +10,7 @@ const FeaturedMain = async () => {
   let content;
   if(article!= null){
     content = <>
-        <Link href={`articles/${article?.slug}`}><Image src={article?.thumbnail} alt={article?.title} width={800} height={800} className='w-full' /></Link>
+        <Link href={`articles/${article?.slug}`}><Image src={article?.thumbnail} placeholder='blur' quality={80} alt={article?.title} width={800} height={800} className='w-full' /></Link>
         <Link href={`articles/${article?.slug}`}><h3 className={`${roboto.className} text-xl text-heading_color py-4`}>{article?.title}</h3></Link>
         <div className={'text-text_color text-base'}>
           {article?.content.split(' ').slice(0, 20).join(' ')}

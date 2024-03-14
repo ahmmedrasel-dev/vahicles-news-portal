@@ -9,7 +9,7 @@ const RArticles = ({article}) => {
   return (
    <div className='grid md:grid-cols-4 grid-cols-1 md:gap-4 mb-4'>
       <div className='col-1'>
-      <Image src={article.thumbnail} width={500} height={500} className='w-full' alt=''/>
+      <Image src={article.thumbnail} placeholder='blur' quality={80} width={500} height={500} className='w-full' alt={article.title} />
       </div>
       
       <div className='col-span-3'>

@@ -9,7 +9,7 @@ const FeatureSecondary = ({article}) => {
   return (
     <div className='grid grid-cols-4 gap-4 mb-4'>
         <div className='col-1'>
-          <Link href={`articles/${article?.slug}`}><Image src={article?.thumbnail} className='w-full' alt={article.title} width={400} height={400} /></Link>
+          <Link href={`articles/${article?.slug}`}><Image src={article?.thumbnail} className='w-full' alt={article.title} width={400} height={400} placeholder='blur' quality={80} /></Link>
         </div>
         
         <div className='col-span-3'>

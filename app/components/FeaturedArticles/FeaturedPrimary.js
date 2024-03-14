@@ -9,7 +9,7 @@ const FeaturedPrimary = ({article}) => {
   return (
     <div className='grid md:grid-cols-2 grid-cols-1 gap-4 mb-8'>
         <div className=''>
-          <Link href="/"><Image src={article?.thumbnail} alt={article.title} width={400} height={400} /></Link>
+          <Link href="/"><Image src={article?.thumbnail} alt={article.title} width={400} height={400} placeholder='blur' quality={80} /></Link>
         </div>
         
         <div className='mb-8'>
